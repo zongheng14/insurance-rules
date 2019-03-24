@@ -21,8 +21,8 @@ public class RulesController {
         Map<String, String> amountMap = new HashMap<>();
         InsuranceRules insuranceRules = new InsuranceRules();
 
-        insuranceRules.setInsurancePeriod("25年");//保险期间 25年
-        insuranceRules.setSaleArea("北京");
+        insuranceRules.setInsurancePeriod(insurancePeriod);//保险期间 25年
+        insuranceRules.setSaleArea(saleArea);
         insuranceRules.setInsuredAge(age);
 
         String drl = KieSessionUtils.getDRL("/Users/shaonan_hu/Desktop/sign.xls");
