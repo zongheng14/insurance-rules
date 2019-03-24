@@ -16,12 +16,11 @@ import java.util.Map;
 public class RulesController {
 
     @RequestMapping(value = "/excute-rules")
-    public String rulesEngine(Integer age) throws FileNotFoundException {
+    public String rulesEngine(String insurancePeriod,String saleArea,Integer age) throws FileNotFoundException {
 
         Map<String, String> amountMap = new HashMap<>();
         InsuranceRules insuranceRules = new InsuranceRules();
 
-        insuranceRules.setCount(1);
         insuranceRules.setInsurancePeriod("25年");//保险期间 25年
         insuranceRules.setSaleArea("北京");
         insuranceRules.setInsuredAge(age);
