@@ -2,21 +2,41 @@ package com.drools.dao;
 
 public class InsuranceRules {
 
-    private Integer count;
+    private String companycode;
 
     private String insurancePeriod; //保险期间
+
+    private String payType; //交费方式
+
+    private String payPeriod; //交费期间
 
     private String saleArea; //销售区域
 
     private Integer insuredAge; //被保人年龄
 
 
-    public Integer getCount() {
-        return count;
+    public String getCompanycode() {
+        return companycode;
     }
 
-    public void setCount(Integer count) {
-        this.count = count;
+    public void setCompanycode(String companycode) {
+        this.companycode = companycode;
+    }
+
+    public String getPayPeriod() {
+        return payPeriod;
+    }
+
+    public void setPayPeriod(String payPeriod) {
+        this.payPeriod = payPeriod;
+    }
+
+    public String getPayType() {
+        return payType;
+    }
+
+    public void setPayType(String payType) {
+        this.payType = payType;
     }
 
     public String getInsurancePeriod() {

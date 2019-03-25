@@ -26,12 +26,15 @@ public class RulesController {
 
         JSONObject paramsJson = JSONObject.parseObject(params);
 
+        insuranceRules.setCompanycode(paramsJson.getString("companycode"));
+        insuranceRules.setPayPeriod(paramsJson.getString("payPeriod"));
+        insuranceRules.setPayType(paramsJson.getString("payType"));
         insuranceRules.setInsurancePeriod(paramsJson.getString("insurancePeriod"));//保险期间 25年
         insuranceRules.setSaleArea(paramsJson.getString("saleArea"));
         insuranceRules.setInsuredAge(paramsJson.getInteger("age"));
 
-//        String drl = KieSessionUtils.getDRL("/Users/shaonan_hu/Desktop/sign.xls");
-        String drl = KieSessionUtils.getDRL("D:\\droolsExcel\\sign.xls");
+        String drl = KieSessionUtils.getDRL("/Users/shaonan_hu/Desktop/sign 1.xls");
+//        String drl = KieSessionUtils.getDRL("D:\\droolsExcel\\sign 1.xls");
 
         System.out.println("解析规则文件：" + drl);
 
