@@ -118,7 +118,7 @@ public class KieSessionUtils {
     /**
      * 根据服务器真实路径下的xls文件生成drl文件内容
      */
-    public static KieSession getKieSessionFromXLS(String realPath) throws FileNotFoundException {
+    public static KieSession getKieSessionFromXLS(String realPath) throws Exception {
         return createKieSessionFromDRL(getDRL(realPath));
     }
 
@@ -131,7 +131,7 @@ public class KieSessionUtils {
     }
 
     // drl为含有内容的字符串
-    public static KieSession createKieSessionFromDRL(String drl) {
+    public static KieSession createKieSessionFromDRL(String drl) throws Exception{
         KieHelper kieHelper = new KieHelper();
         kieHelper.addContent(drl, ResourceType.DRL);
         Results results = kieHelper.verify();
@@ -140,7 +140,7 @@ public class KieSessionUtils {
             for (Message message : messages) {
                 System.out.println("Error: "+message.getText());
             }
-            throw new IllegalStateException("Compilation errors were found. Check the logs.");
+           // throw new IllegalStateException("Compilation errors were found. Check the logs.");
         }
         return kieHelper.build().newKieSession();
     }

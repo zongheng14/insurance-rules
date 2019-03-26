@@ -1,5 +1,6 @@
 package com.drools.dao;
 
+
 public class InsuranceRules {
 
     private String companycode;
@@ -14,6 +15,16 @@ public class InsuranceRules {
 
     private Integer insuredAge; //被保人年龄
 
+    private String amount;//保额
+
+
+    public String getAmount() {
+        return amount;
+    }
+
+    public void setAmount(String amount) {
+        this.amount = amount;
+    }
 
     public String getCompanycode() {
         return companycode;
