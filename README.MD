@@ -4,6 +4,11 @@ https://docs.jboss.org/drools/release/6.5.0.Final/drools-docs/html_single/index.
 ###参考
 https://blog.csdn.net/ujsleo/article/details/78716842
 
+###访问路径
+post请求  
+
+http://localhost:8081/resolverRules
+
 ####入参json
 {
   "templateUrl": "D:\\droolsExcel\\personal-api\\templateRules.xls",
