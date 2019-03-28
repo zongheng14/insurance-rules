@@ -2,7 +2,7 @@ package com.drools.controller;
 
 
 import com.alibaba.fastjson.JSONObject;
-import com.drools.dao.InsuranceRules;
+import com.drools.dao.InsuranceRules_old;
 import com.drools.utils.KieSessionUtils;
 import org.kie.api.runtime.KieSession;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -14,14 +14,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-public class RulesController {
+public class RulesController_old {
 
     @RequestMapping(value = "/excute-rules")
     public String rulesEngine(@RequestBody String params) throws FileNotFoundException {
 
 //        Map<String, String> amountMap = new HashMap<>();
         List<String> listRules = new ArrayList<>();
-        InsuranceRules insuranceRules = new InsuranceRules();
+        InsuranceRules_old insuranceRules = new InsuranceRules_old();
 
         JSONObject paramsJson = JSONObject.parseObject(params);
 

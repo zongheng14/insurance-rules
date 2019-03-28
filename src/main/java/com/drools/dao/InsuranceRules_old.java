@@ -1,7 +1,7 @@
 package com.drools.dao;
 
 
-public class InsuranceRules {
+public class InsuranceRules_old {
 
     private String companycode;
 

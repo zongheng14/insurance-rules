@@ -2,7 +2,7 @@ package com.drools.controller;
 
 import com.alibaba.fastjson.JSONObject;
 import com.drools.bean.ApiResponse;
-import com.drools.dao.InsuranceRules;
+import com.drools.dao.InsuranceRules_old;
 import com.drools.utils.KieSessionUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.kie.api.runtime.KieSession;
@@ -22,14 +22,14 @@ import java.util.List;
  * @Time 2019/3/27
  */
 @RestController
-public class TemplateController {
-    private static Logger logger = LoggerFactory.getLogger(TemplateController.class);
+public class TemplateController_old {
+    private static Logger logger = LoggerFactory.getLogger(TemplateController_old.class);
 
     /**
      * @param params ： 预校验的数据 （必填）
      * @return
      */
-    @RequestMapping("/resolverRules")
+    @RequestMapping("/resolverRules_old")
     public ApiResponse resolverRules(@RequestBody String params) {
         logger.info("规则引擎，解析入参：{}" + params);
         ApiResponse<String> response = new ApiResponse<>();
@@ -53,7 +53,7 @@ public class TemplateController {
             //全局的接收对象
             List<String> listRules = new ArrayList<>();
             //参数转化为bean非动态  有局限性
-            InsuranceRules insuranceRules = param2bean(paramsJson);
+            InsuranceRules_old insuranceRules = param2bean(paramsJson);
 
             String drl = null;
             try {
@@ -117,9 +117,9 @@ public class TemplateController {
      * @param paramsJson
      * @return
      */
-    private InsuranceRules param2bean(JSONObject paramsJson) {
+    private InsuranceRules_old param2bean(JSONObject paramsJson) {
         logger.info("参数转换为bean--->");
-        InsuranceRules insuranceRules = new InsuranceRules();
+        InsuranceRules_old insuranceRules = new InsuranceRules_old();
         try {
             insuranceRules.setCompanycode(paramsJson.getString("companycode"));
             insuranceRules.setPayPeriod(paramsJson.getString("payPeriod"));
