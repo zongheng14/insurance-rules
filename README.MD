@@ -10,6 +10,7 @@ post请求
 http://localhost:8081/resolverRules
 
 ####入参json
+、、、java
 {
   "templateUrl": "D:\\droolsExcel\\personal-api\\templateRules.xls",
   "companycode": "picc",
@@ -36,6 +37,7 @@ http://localhost:8081/resolverRules
   "documentType": "",
   "totalpremium": ""
 }
+、、、
 
 ###对应模板字段
 
