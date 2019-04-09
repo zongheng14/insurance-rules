@@ -2,7 +2,6 @@ package com.drools.controller;
 
 import com.alibaba.fastjson.JSONObject;
 import com.drools.bean.ApiResponse;
-import com.drools.dao.InsuranceRules_old;
 import com.drools.dao.InsuranceRulesDao;
 import com.drools.utils.KieSessionUtils;
 import com.drools.utils.Params2rulesBean;
@@ -115,26 +114,5 @@ public class InsuranceRulesController {
         return response;
     }
 
-    /**
-     * 参数转换为bean
-     *
-     * @param paramsJson
-     * @return
-     */
-    private InsuranceRules_old param2bean(JSONObject paramsJson) {
-        logger.info("参数转换为bean--->");
-        InsuranceRules_old insuranceRules = new InsuranceRules_old();
-        try {
-            insuranceRules.setCompanycode(paramsJson.getString("companycode"));
-            insuranceRules.setPayPeriod(paramsJson.getString("payPeriod"));
-            insuranceRules.setPayType(paramsJson.getString("payType"));
-            insuranceRules.setInsurancePeriod(paramsJson.getString("insurancePeriod"));//保险期间 25年
-            insuranceRules.setSaleArea(paramsJson.getString("saleArea"));
-            insuranceRules.setInsuredAge(paramsJson.getInteger("age"));
-            insuranceRules.setAmount(paramsJson.getString("amount"));//保额
-        } catch (Exception e) {
-            logger.info("参数转bean异常{}", e);
-        }
-        return insuranceRules;
-    }
+
 }
