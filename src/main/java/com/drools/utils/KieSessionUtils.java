@@ -14,10 +14,7 @@ import org.kie.api.runtime.StatelessKieSession;
 import org.kie.internal.utils.KieHelper;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.InputStream;
+import java.io.*;
 import java.util.List;
 
 /**
@@ -125,6 +122,15 @@ public class KieSessionUtils {
     // 把xls文件解析为String
     public static String getDRL (String realPath) throws FileNotFoundException {
         File file = new File(realPath); // 例如：C:\\abc.xls
+        InputStream is = new FileInputStream(file);
+        SpreadsheetCompiler compiler = new SpreadsheetCompiler();
+        return compiler.compile(is, InputType.XLS);
+    }
+
+    //解析oss返回的key
+    public static String getDRL2 (String realPath) throws Exception {
+        File file = new File(realPath); // 例如：C:\\abc.xls
+
         InputStream is = new FileInputStream(file);
         SpreadsheetCompiler compiler = new SpreadsheetCompiler();
         return compiler.compile(is, InputType.XLS);

@@ -61,7 +61,7 @@ public class InsuranceRulesController {
 
             String drl = null;
             try {
-                drl = KieSessionUtils.getDRL(templateUrl);
+                drl = KieSessionUtils.getDRL2(templateUrl);
                 logger.info("解析规则文件结果{}", drl);
             } catch (FileNotFoundException e) {
                 logger.info("文件解析异常{}", e);
